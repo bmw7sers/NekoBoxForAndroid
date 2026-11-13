@@ -1,3 +1,15 @@
+# NekoBox for Android — personal fork (bmw7sers)
+
+> **Зачем этот форк.** Личная сборка NekoBox для своего телефона.
+> Отличия от оригинала (ветка `show-all-apps`):
+> - в списке раздельного туннелирования показываются **все** установленные приложения
+>   (как в v2rayNG), а не только запросившие разрешение `INTERNET` — иначе не видно, например, Gemini;
+> - сборка в GitHub Actions (`Preview Build`) собирает обычный вариант `oss` без окна «предварительной версии»,
+>   с Java 17 и собственным ключом подписи (`release.keystore`), чтобы обновления ставились поверх.
+>
+> Ключ подписи хранится в репозитории открыто и нужен только для этой личной сборки.
+> Оригинальный проект: https://github.com/MatsuriDayo/NekoBoxForAndroid
+
 # NekoBox for Android
 
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
