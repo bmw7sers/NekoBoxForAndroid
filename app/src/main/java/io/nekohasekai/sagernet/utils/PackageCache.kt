@@ -43,11 +43,11 @@ object PackageCache {
                     or PackageManager.GET_META_DATA
         )
 
+        // Show all installed packages (like v2rayNG), not only those requesting INTERNET.
+        // Some apps (e.g. Gemini, com.google.android.apps.bard) don't declare INTERNET
+        // but users still want to select them for per-app proxy.
         installedPackages = rawPackageInfo.filter {
-            when (it.packageName) {
-                "android" -> true
-                else -> it.requestedPermissions?.contains(Manifest.permission.INTERNET) == true
-            }
+            it.applicationInfo != null
         }.associateBy { it.packageName }
 
         installedPluginPackages = rawPackageInfo.filter {

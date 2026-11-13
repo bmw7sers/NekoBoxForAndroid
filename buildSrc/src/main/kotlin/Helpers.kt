@@ -135,6 +135,10 @@ fun Project.setupAppCommon() {
             if (key != null) {
                 getByName("release").signingConfig = key
                 getByName("debug").signingConfig = key
+            } else {
+                // No release keystore (e.g. build in a fork without secrets):
+                // sign with the debug key so the APK is installable.
+                getByName("release").signingConfig = signingConfigs.getByName("debug")
             }
         }
     }
